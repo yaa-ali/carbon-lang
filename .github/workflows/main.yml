@@ -9,11 +9,7 @@ jobs:
         with:
           python-version: '3.9'
       - uses: bazelbuild/setup-bazelisk@v2
-      #- run: brew install llvm
-      - name: Install LLVM and Clang
-      - uses: KyleMayes/install-llvm-action@v1
-        with:
-          version: "10.0"
+      - run: brew install llvm
       - run: bazel build //explorer
       - uses: actions/upload-artifact@v3.1.0
         with:
